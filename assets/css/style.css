@@ -1,0 +1,10 @@
+body{
+    background-image:url("../images/ramsbackground.jpeg");
+    background-size:cover;
+}
+
+h1 {
+    color:white;
+    background-color:rgb(197,179,88);
+
+}
