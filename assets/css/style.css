@@ -1,4 +1,4 @@
-body{
+/* body{
     background-image:url("../images/ramsbackground.jpeg");
     background-size:cover;
 }
@@ -7,4 +7,13 @@ h1 {
     color:white;
     background-color:rgb(197,179,88);
 
+} */
+.question{
+    color:rgb(134,109,75);
+    
+}
+
+.answers {
+    color:rgb(4,30,66);
+    
 }
