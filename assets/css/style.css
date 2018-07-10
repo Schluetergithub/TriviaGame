@@ -1,19 +1,34 @@
-/* body{
+body{
     background-image:url("../images/ramsbackground.jpeg");
     background-size:cover;
+    
 }
 
 h1 {
     color:white;
     background-color:rgb(197,179,88);
-
-} */
+    margin-left:225px;
+    margin-right:800px
+} 
 .question{
-    color:rgb(134,109,75);
+    color:white;
+    margin-left:500px;
     
 }
 
 .answers {
-    color:rgb(4,30,66);
+    color:yellow;
+    margin-left:500px;
+
     
+}
+
+#submit{
+    margin-left:500px;
+
+}
+
+#results{
+    margin-left:500px;
+    color:white;
 }

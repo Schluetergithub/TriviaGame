@@ -1,10 +1,14 @@
+var allottedTime = 120
+
+
+
 const quizContainer = document.getElementById('quiz');
 const resultsContainer = document.getElementById('results');
 const submitButton = document.getElementById('submit');
 
 const myQuestions = [
     {
-      question: "Who holds the single season Rushing record for the Rams?",
+      question: "Who holds the single season Rushing record for the Rams?", 
       answers: {
         a: "Todd Gurley",
         b: "Marshall Faulk",
