@@ -1,34 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body{
     background-image:url("../images/ramsbackground.jpeg");
     background-size:cover;
     
 }
 
-h1 {
-    color:white;
-    background-color:rgb(197,179,88);
-    margin-left:225px;
-    margin-right:800px
-} 
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+    
+}
+
+ .display-masthead {
+    font-family: 'American Typewriter', serif;
+    color: rgb(6, 80, 94);
+    text-align:center;
+}
+   
+.lead {
+    color: rgb(197,179,88);
+    text-align:center;
+}
+
+#start_btn {
+  margin-left:46%;
+  background-color: rgb(197, 179, 88);
+  border: 1px solid white;
+  color: rgb(13, 2, 173);
+}
+
+#done_btn {
+ margin-left: 70%;
+  margin-bottom: 3%;
+  background-color: rgb(197, 179, 88);
+  border: 1px solid white;
+  color: rgb(13, 2, 173);
+  opacity: 0.7;
+ filter: alpha(opacity=10);
+
+}
+
 .question{
-    color:white;
-    margin-left:500px;
-    
+    padding-left:10%;
+    padding-top:3%;
+    font-size:20px;
+    color: white;
 }
 
-.answers {
-    color:yellow;
-    margin-left:500px;
-
-    
+.answer_box {
+    padding-left:10%;
+    padding-bottom:3%;
+    font-size:20px;
+    color: white;
 }
 
-#submit{
-    margin-left:500px;
-
+.forms{ 
+    display: none; 
+}​
+ 
+ #result_box p{
+    display: none; 
+    display:flex;
+    justify-content: center; 
+    color: white;
 }
 
-#results{
-    margin-left:500px;
-    color:white;
-}
+
+
+
+
+

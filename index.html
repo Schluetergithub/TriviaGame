@@ -1,29 +1,319 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Rams Trivia</title>
+    <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="assets/javascript/app.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
 </head>
+
 <body>
-    
-    
+    <form class="background_white" name="MyForm">
+        <div class="container clearfix">
+            <div class="row">
+                <div class="col-12">
+                    <div class="jumbotron">
+                        <h1 class="display-masthead">Rams Trivia</h1>
+                        <p class="lead">Can you answer these questions like a true Rams fanatic?</p>
+                        <hr class="my-4">
+                        <a id="start_btn" class="btn btn-primary btn-lg" href="#" role="button">Start</a>
+                        <div id="interval_time">45</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 forms">
+                    <div class="form-group">
+                        <h6 class="question">Who holds the single season Rushing record for the Rams?</h6>
+                    </div>
+                    <div class="form_answers">
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question1" value="c"> ) Todd Gurley</label>
+                        </div>
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question1" value="b"> ) Marshall Faulk</label>
+                        </div>
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question1" value="d"> ) Steven Jackson</label>
+                        </div>
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question1" value="a"> ) Eric Dickerson </label>
+                        </div>
+                    </div>
 
-        <h1>Rams Trivia</h1>
+                </div>
+                <div class="col-6 forms">
+                    <div class="form-group">
+                        <h6 class="question">Where do the Rams originate from?</h6>
+                    </div>
+                    <div class="form_answers">
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question2" value="a"> ) Cleveland</label>
+                        </div>
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question2" value="b"> ) Los Angeles</label>
+                        </div>
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question2" value="c"> ) St. Louis</label>
+                        </div>
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question2" value="d"> ) Baltimore</label>
+                        </div>
+                    </div>
 
-        <div id="quiz"></div>
 
-        <button id="submit">Submit Quiz</button>
+                </div>
 
-        <div id="results"></div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-6 forms">
+                    <div class="form-group">
+                        <h6 class="question">What is the Rams' mascot's name?</h6>
+                    </div>
+                    <div class="form_answers">
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question3" value="d"> ) Rambunctious</label>
+                        </div>
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question3" value="b"> ) Rammy</label>
+                        </div>
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question3" value="a"> ) Rampage</label>
+                        </div>
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question3" value="c"> ) Rama-Lama-Ding-Dong</label>
+                        </div>
+                    </div>
 
-        <script src="assets/javascript/app.js"></script>
+                </div>
+                <div class="col-6 forms">
+                    <div class="form-group">
+                        <h6 class="question">What year were the Rams established in the NFL?</h6>
+                    </div>
+                    <div class="form_answers">
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question4" value="c"> ) 1950</label>
+                        </div>
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question4" value="a"> ) 1936 </label>
+                        </div>
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question4" value="b"> ) 1940</label>
+                        </div>
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question4" value="d"> ) 1961</label>
+                        </div>
+                    </div>
+                </div>
+ 
 
-    
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-6 forms">
+                    <div class="form-group">
+                        <h6 class="question">How many Superbowl titles have the Rams won?</h6>
+                    </div>
+                    <div class="form_answers">
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question5" value="a"> ) 1</label>
+                        </div>
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question5" value="b"> ) 2</label>
+                        </div>
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question5" value="c"> ) 3</label>
+                        </div>
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question5" value="d"> ) 4</label>
+                        </div>
+                    </div>
 
+                </div>
+                <div class="col-6 forms">
+                    <div class="form-group">
+                        <h6 class="question">What was the nickname of the Rams famous defensive line in the 1960s?</h6>
+                    </div>
+                    <div class="form_answers">
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question6" value="c"> ) The Roadblocks</label>
+                        </div>
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question6" value="a"> ) The Fearsome Foursom</label>
+                        </div>
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question6" value="b"> ) Sack Attack</label>
+                        </div>
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question6" value="d"> ) The Bullrush</label>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-6 forms">
+                    <div class="form-group">
+                        <h6 class="question">Who made 'The Tackle' in the 2000 Superbowl, to win the game?</h6>
+                    </div>
+                    <div class="form_answers">
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question7" value="d"> ) Steve Spagnulo</label>
+                        </div>
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question7" value="b"> ) Chirs Long</label>
+                        </div>
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question7" value="c"> ) Kurt Warner</label>
+                        </div>
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question7" value="a"> ) Mike Jones</label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-6 forms">
+                    <div class="form-group">
+                        <h6 class="question">The Rams were the first NFL team to have what?</h6>
+                    </div>
+                    <div class="form_answers">
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question8" value="b"> ) A Mascot</label>
+                        </div>
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question8" value="c"> ) Cheerleaders</label>
+                        </div>
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question8" value="a"> ) Helmet Logos</label>
+                        </div>
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question8" value="d"> ) Painted Endzones</label>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-6 forms">
+                    <div class="form-group">
+                        <h6 class="question">Which coach led the Rams to their Superbowl win in the year 2000?</h6>
+                    </div>
+                    <div class="form_answers">
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question9" value="b"> ) Sean McVay</label>
+                        </div>
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question9" value="a"> ) Dick Vermeil</label>
+                        </div>
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question9" value="c"> ) Steve Spagnulo</label>
+                        </div>
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question9" value="d"> ) Mike Martz</label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-6 forms">
+                    <div class="form-group">
+                        <h6 class="question">How many Superbowl appearances have the Rams made?</h6>
+                    </div>
+                    <div class="form_answers">
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question10" value="b"> ) 4</label>
+                        </div>
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question10" value="a"> ) 3</label>
+                        </div>
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question10" value="c"> ) 2</label>
+                        </div>
+                        <div class="answer_box">
+                            <label>
+                                <input type="radio" name="question10" value="d"> ) 1</label>
+                        </div>
+                        <div>
+                            <a id="done_btn" class="btn btn-primary btn-lg" href="#" role="button">Submit Quiz</a>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </form>
+    <div class="container_result">
+            <div class="row">
+                <div id="result_border" class="col-12" style="text-align: center">
+                    <div id="result_box">
+                        <h5 id ="timeup"></h5>
+                        <p id="correct_answer">Correct</p>
+                        <p id="wrong_answer">Incorrect</p>
+                        <p id="unanswered">Unanswered</p>
+                    </div>
+
+                </div>
+
+            </div>
+    </div>
 
 </body>
+
 </html>
