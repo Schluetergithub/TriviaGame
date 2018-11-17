@@ -4,73 +4,124 @@ $(document).ready(function () {
   var intervalId;
   var timeOut;
 
-  var correct = 0;
-  var wrong = 0;
-  var skipped = 0;
-
-
-  $("#result_box").hide();
-
-
-  // start button on click. When button pressed, button dissappears and reveal timer
-  $("#start_btn").click(function () {
+  $("#start_button").click(function () {
       $(".forms").show();
       $("#result_box").hide();
-      $("#start_btn").hide();
+      $("#start_button").hide();
       intervalId = setInterval(timer, 1000);
       timeOut = setTimeout(timeUp, 45000);
   });
 
-  // function to operate timer interval //
   function timer() {
       number--;
-      $("#interval_time").text(number);
-      console.log('The time is: ' + (number));
+      $("#triviaTimer").text(number);
   }
 
-  // "Done" button stops timer and dsiplays correct,incorrect,unanswered //
-  $('#done_btn').click(function () {
-      $("#interval_time").hide();
+  $('#end_button').click(function () {
+      $("#triviaTime").hide();
       $(".forms").hide();
       $("#timeup").hide();
       $("#result_box").show();
       clearTimeout(timeOut);
       timeUp();
+    //   callModal();
 
   });
 
-  // function which operates when timer interval runs out //
   function timeUp() {
       $(".forms").hide();
       $("#result_box").show();
       $("#timeup").html("<h5>Time's Up!</h5>");
-      console.log("time is up");
       checkAnswers();
       clearInterval(intervalId);
+
+      for (var i = 0; i < 250; i++) {
+        create(i);
+      }
+      
+      function create(i) {
+        var width = Math.random() * 8;
+        var height = width * 0.4;
+        var colourIdx = Math.ceil(Math.random() * 3);
+        var colour = "red";
+        switch(colourIdx) {
+          case 1:
+            colour = "yellow";
+            break;
+          case 2:
+            colour = "blue";
+            break;
+          default:
+            colour = "red";
+        }
+        $('<div class="confetti-'+i+' '+colour+'"></div>').css({
+          "width" : width+"px",
+          "height" : height+"px",
+          "top" : -Math.random()*20+"%",
+          "left" : Math.random()*100+"%",
+          "opacity" : Math.random()+0.5,
+          "transform" : "rotate("+Math.random()*360+"deg)"
+        }).appendTo('.wrapper');  
+        
+        drop(i);
+      }
+      
+      function drop(x) {
+        $('.confetti-'+x).animate({
+          top: "100%",
+          left: "+="+Math.random()*15+"%"
+        }, Math.random()*3000 + 3000, function() {
+          reset(x);
+        });
+      }
+      
+      function reset(x) {
+        $('.confetti-'+x).animate({
+          "top" : -Math.random()*20+"%",
+          "left" : "-="+Math.random()*15+"%"
+        }, 0, function() {
+          drop(x);             
+        });
+      }
+
+        var correct = 0;
+        var wrong = 0;
+        var skipped = 0;
+
+        function checkAnswers() {
+            for (i = 1; i <= 10; i++) {
+                var answerVal = $('input[name="question' + i + '"]:checked').val();
+                if (answerVal == "a") correct++;
+                else if (answerVal == undefined) wrong++;
+                else skipped++;
+            } 
+
+            $('#correct_answer').text("Correct: " + " " + correct);
+            $('#wrong_answer').text("Incorrect: " + " " + skipped);
+            $('#unanswered').text("Unanswered: " + " " + wrong);
+
+        };
   }
 
-  // calculates correct,incorrect,unanswered and prints in html //
-  function checkAnswers() {
-      for (i = 1; i <= 10; i++) {
-          var answerVal = $('input[name="question' + i + '"]:checked').val();
-          if (answerVal == "a") correct++;
-          else if (answerVal == undefined) wrong++;
-          else skipped++;
-      } // end of for loop
+  $("#result_box").hide();
 
-      console.log(correct);
-      console.log(wrong);
-      console.log(skipped);
+//   var correct = 0;
+//   var wrong = 0;
+//   var skipped = 0;
 
-      $('#correct_answer').text("Correct: " + " " + correct);
-      $('#wrong_answer').text("Incorrect: " + " " + skipped);
-      $('#unanswered').text("Unanswered: " + " " + wrong);
+//   function checkAnswers() {
+//       for (i = 1; i <= 10; i++) {
+//           var answerVal = $('input[name="question' + i + '"]:checked').val();
+//           if (answerVal == "a") correct++;
+//           else if (answerVal == undefined) wrong++;
+//           else skipped++;
+//       } 
 
-  }
+//       $('#correct_answer').text("Correct: " + " " + correct);
+//       $('#wrong_answer').text("Incorrect: " + " " + skipped);
+//       $('#unanswered').text("Unanswered: " + " " + wrong);
 
+//   };
+  
 
-
-
-
-
-}); //document ready//
+}); 
